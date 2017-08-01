@@ -4690,3 +4690,457 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 188ms (Views: 162.7ms | ActiveRecord: 8.9ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-08-01 12:23:00 +0200
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (109.1ms)
+Completed 200 OK in 2937ms (Views: 2880.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-01 12:23:04 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 320ms (Views: 317.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-08-01 12:23:15 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (6.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered collection of products/_product.html.erb [3 times] (13.5ms)
+  Rendered products/index.html.erb within layouts/application (43.9ms)
+Completed 200 OK in 358ms (Views: 337.4ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-01 12:23:20 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (4.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (2.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (8.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC[0m  [["product_id", 1]]
+  Rendered products/_new_comment.html.erb (0.8ms) [cache miss]
+  Rendered products/show.html.erb within layouts/application (250.7ms)
+Completed 200 OK in 485ms (Views: 426.8ms | ActiveRecord: 25.2ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-01 12:24:29 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (167.2ms)
+Completed 200 OK in 564ms (Views: 421.2ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-08-01 12:24:43 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F8S4wfONUR9E3WwBpog+3FzPfG7tQBwDlBOaNVav7SbL3/pi5+jNv4bTYz2sptTt+O7QY6US5Zkw2gFwToZvWg==", "user"=>{"email"=>"jacques.leroux3@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jacques.leroux3@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (26.8ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-08-01 10:24:44.766312"], ["last_sign_in_at", "2017-07-26 12:22:40.471058"], ["sign_in_count", 10], ["updated_at", "2017-08-01 10:24:44.776420"], ["id", 1]]
+  [1m[35m (98.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 981ms (ActiveRecord: 126.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-01 12:24:45 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (16.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 254ms (Views: 251.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-08-01 12:24:55 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered collection of products/_product.html.erb [3 times] (1.5ms)
+  Rendered products/index.html.erb within layouts/application (26.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 264ms (Views: 246.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-01 12:25:01 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (1.7ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (30.3ms) [cache miss]
+  Rendered products/show.html.erb within layouts/application (62.8ms)
+Completed 200 OK in 299ms (Views: 286.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-01 14:33:32 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (3.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (13.9ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (106.0ms) [cache miss]
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY create_at DESC[0m  [["product_id", 1]]
+  Rendered products/_comments.html.erb (17.6ms)
+  Rendered products/show.html.erb within layouts/application (201.0ms)
+Completed 500 Internal Server Error in 355ms (ActiveRecord: 51.4ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: create_at: SELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY create_at DESC):
+    1: <div class="product-reviews">
+    2:   <% @comments.each do |comment| %>
+    3:     <div class="row">
+    4:       <hr>
+    5:       <p><%= comment.user.first_name %> <small><em><%= "#{time_ago_in_words(comment.created at)} ago" %></em></small></p>
+  
+app/views/products/_comments.html.erb:2:in `_app_views_products__comments_html_erb__1063937762__643459058'
+app/views/products/show.html.erb:28:in `_app_views_products_show_html_erb__68221610__643684578'
+Started GET "/products/1" for 127.0.0.1 at 2017-08-01 14:34:50 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (20.9ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (8.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (105.3ms) [cache miss]
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_comments.html.erb (2106.9ms)
+  Rendered products/show.html.erb within layouts/application (2304.5ms)
+Completed 500 Internal Server Error in 2469ms (ActiveRecord: 82.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `at' for #<#<Class:0xb3709708>:0xb3708880>):
+    2:   <% @comments.each do |comment| %>
+    3:     <div class="row">
+    4:       <hr>
+    5:       <p><%= comment.user.first_name %> <small><em><%= "#{time_ago_in_words(comment.created at)} ago" %></em></small></p>
+    6:       <p><%= "Rating: #{comment.rating}/5" %></p>
+    7:       <p><%= comment.body %></p>
+    8:     </div>
+  
+app/views/products/_comments.html.erb:5:in `block in _app_views_products__comments_html_erb__1063937762__638312768'
+app/views/products/_comments.html.erb:2:in `_app_views_products__comments_html_erb__1063937762__638312768'
+app/views/products/show.html.erb:28:in `_app_views_products_show_html_erb__68221610__642232898'
+Started GET "/products/1" for 127.0.0.1 at 2017-08-01 14:36:05 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (22.7ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (40.4ms) [cache miss]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_comments.html.erb (74.7ms) [cache miss]
+  Rendered products/show.html.erb within layouts/application (174.1ms)
+Completed 200 OK in 514ms (Views: 466.0ms | ActiveRecord: 26.4ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-01 15:50:04 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (26.2ms) [cache miss]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_comments.html.erb (24.7ms) [cache miss]
+  Rendered products/show.html.erb within layouts/application (89.2ms)
+Completed 200 OK in 895ms (Views: 877.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-01 15:50:34 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (10.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (24.2ms) [cache miss]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_comments.html.erb (46.9ms) [cache miss]
+  Rendered products/show.html.erb within layouts/application (109.5ms)
+Completed 200 OK in 358ms (Views: 324.1ms | ActiveRecord: 13.2ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-01 15:50:57 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (21.9ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (20.8ms) [cache miss]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_comments.html.erb (43.4ms) [cache miss]
+  Rendered products/show.html.erb within layouts/application (114.4ms)
+Completed 200 OK in 360ms (Views: 309.8ms | ActiveRecord: 24.3ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-01 15:54:50 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (24.5ms) [cache miss]
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_comments.html.erb (29.5ms) [cache miss]
+  Rendered products/show.html.erb within layouts/application (85.2ms)
+Completed 200 OK in 694ms (Views: 680.1ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-01 16:02:00 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (20.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (35.6ms) [cache miss]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_comments.html.erb (38.3ms) [cache miss]
+  Rendered products/show.html.erb within layouts/application (111.3ms)
+Completed 200 OK in 1147ms (Views: 1109.2ms | ActiveRecord: 22.7ms)
+
+
+Started GET "/products/star-off.png" for 127.0.0.1 at 2017-08-01 16:02:04 +0200
+Processing by ProductsController#show as PNG
+  Parameters: {"id"=>"star-off"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 18ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=star-off):
+  
+app/controllers/products_controller.rb:74:in `set_product'
+Started GET "/products/star-off.png" for 127.0.0.1 at 2017-08-01 16:02:13 +0200
+Processing by ProductsController#show as PNG
+  Parameters: {"id"=>"star-off"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 14ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=star-off):
+  
+app/controllers/products_controller.rb:74:in `set_product'
+Started GET "/products/1" for 127.0.0.1 at 2017-08-01 16:07:50 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (17.5ms) [cache miss]
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_comments.html.erb (39.6ms) [cache miss]
+  Rendered products/show.html.erb within layouts/application (90.6ms)
+Completed 200 OK in 902ms (Views: 886.8ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-01 16:19:11 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (17.6ms) [cache miss]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_comments.html.erb (38.8ms) [cache miss]
+  Rendered products/show.html.erb within layouts/application (84.7ms)
+Completed 200 OK in 804ms (Views: 771.0ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-01 16:31:56 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (4.9ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (13.3ms) [cache miss]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_comments.html.erb (45.0ms) [cache miss]
+  Rendered products/show.html.erb within layouts/application (98.7ms)
+Completed 200 OK in 805ms (Views: 781.7ms | ActiveRecord: 12.3ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-01 16:34:30 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (10.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (19.8ms) [cache miss]
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_comments.html.erb (44.9ms) [cache miss]
+  Rendered products/show.html.erb within layouts/application (108.6ms)
+Completed 200 OK in 364ms (Views: 342.3ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-01 16:37:30 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (27.5ms) [cache miss]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_comments.html.erb (29.9ms) [cache miss]
+  Rendered products/show.html.erb within layouts/application (97.0ms)
+Completed 200 OK in 352ms (Views: 337.3ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-01 16:38:00 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (9.8ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (20.2ms) [cache miss]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_comments.html.erb (37.1ms) [cache miss]
+  Rendered products/show.html.erb within layouts/application (115.7ms)
+Completed 200 OK in 369ms (Views: 339.2ms | ActiveRecord: 16.3ms)
+
+
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (8.7ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+Started GET "/products/1" for 127.0.0.1 at 2017-08-01 16:44:28 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mComment Load (24.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC LIMIT ?[0m  [["product_id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY "comments"."rating" DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (250.3ms) [cache miss]
+  [1m[36mComment Load (5.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (12.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_comments.html.erb (60.4ms) [cache miss]
+  Rendered products/show.html.erb within layouts/application (457.1ms)
+Completed 200 OK in 3824ms (Views: 3530.1ms | ActiveRecord: 48.1ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-01 16:46:48 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (11.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (23.8ms) [cache miss]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_comments.html.erb (41.0ms) [cache miss]
+  Rendered products/show.html.erb within layouts/application (83.1ms)
+Completed 200 OK in 416ms (Views: 390.4ms | ActiveRecord: 15.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-01 18:45:20 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (16.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (104.4ms)
+Completed 200 OK in 4640ms (Views: 4552.0ms | ActiveRecord: 23.1ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-08-01 18:46:40 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered collection of products/_product.html.erb [3 times] (2.0ms)
+  Rendered products/index.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 252ms (Views: 242.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-01 18:46:46 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (15.3ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered products/_new_comment.html.erb (1.2ms) [cache miss]
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC[0m  [["product_id", 1]]
+  [1m[36mUser Load (12.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_comments.html.erb (482.6ms) [cache miss]
+  Rendered products/show.html.erb within layouts/application (519.4ms)
+Completed 200 OK in 1052ms (Views: 835.3ms | ActiveRecord: 32.1ms)
+
+
