@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container-fluid product-single-whole">
+  <div class="row">
+   <div class="col-xs-12 col-sm-6 product-img">
+    <% if @product.image_url %>
+      <%= image_tag(@product.image_url, class: "img-responsive img-rounded") %>
+    <% end %>
+    </div>
+    <div class="col-xs-12 col-sm-6 product-description">
+      <h1><%= @product.name %></h1>
+      <hr>
+      <h3>R<%= @product.price %></h3>
+      <hr>
+      <h3>Colours: <%= @product.colour %></h3>
+      <hr>
+      <p><%= @product.description %></p>
+    </div>
+  </div> <!-- end row -->
+</div>  <!-- end container -->
+
+
+<%= @product.highest_rating_comment %>
+<%= @product.lowest_rating_comment %>
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

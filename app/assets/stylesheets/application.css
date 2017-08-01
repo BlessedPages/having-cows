@@ -1,0 +1,79 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+  display: block;
+}
+
+/**** NAVBAR ****/
+
+.nav-align {
+  padding: 10px;
+  line-height: 20px;
+}
+
+
+/**** FOOTER ***/
+
+footer {
+  background: #333;
+  color: #eee;
+  font-size: 11px;
+  text-align: center;
+}
+
+footer .heading {
+  color: grey;
+}
+
+footer ul {
+  padding-top: 12px;
+  padding-left: 0;
+}
+
+footer a:hover {
+  color: purple;
+  text-decoration: none;
+  background-color: #333;
+}
+
+/**** TYPOGRAPHY ****/
+
+.funky-txt {
+  font-family: "Bowlby One";
+}
+
+.clear-nav {
+  margin-top: 55px;
+}
+.unstyled {
+  list-style-type: none;
+}
+
+.section-header {
+  text-align: center;
+  font-weight: bold;
+}
+
+.sub-header {
+  margin-top: -10px;
+}
+
+#yield-container {
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 56px; 
+}
