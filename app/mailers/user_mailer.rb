@@ -7,4 +7,10 @@ class UserMailer < ApplicationMailer
 						:to => "jacques.leroux3@gmail.com",
 						:subject => "A message from #{name}")
 	end
+
+	def welcome(user)
+		@appname = "The Having Cows Parade"
+		mail(to: user.mail,
+			subject: "Welcome to #{@appname}!")
+	end
 end
