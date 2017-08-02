@@ -5925,3 +5925,77 @@ Processing by ProductsController#show as HTML
 Completed 200 OK in 378ms (Views: 353.7ms | ActiveRecord: 11.8ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-08-02 09:51:18 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (9.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (91.5ms)
+Completed 200 OK in 2538ms (Views: 2445.4ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/rails/mailers/user_mailer/welcome" for 127.0.0.1 at 2017-08-02 10:48:23 +0200
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/welcome"}
+Completed 500 Internal Server Error in 1240ms
+
+
+  
+NoMethodError (undefined method `mailer' for User (call 'User.connection' to establish a connection):Class):
+  
+test/mailers/previews/user_mailer_preview.rb:9:in `welcome'
+Started GET "/rails/mailers/user_mailer/welcome" for 127.0.0.1 at 2017-08-02 10:51:02 +0200
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/welcome"}
+UserMailer#welcome: processed outbound mail in 25.0ms
+Completed 500 Internal Server Error in 107ms
+
+
+  
+NoMethodError (undefined method `mail' for "jacques@example.com":String):
+  
+app/mailers/user_mailer.rb:13:in `welcome'
+Started GET "/rails/mailers/user_mailer/welcome" for 127.0.0.1 at 2017-08-02 11:07:49 +0200
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/welcome"}
+UserMailer#welcome: processed outbound mail in 16.2ms
+Completed 500 Internal Server Error in 23ms
+
+
+  
+NoMethodError (undefined method `mail' for "jacques@example.com":String):
+  
+app/mailers/user_mailer.rb:13:in `welcome'
+Started GET "/rails/mailers/user_mailer/welcome" for 127.0.0.1 at 2017-08-02 11:08:33 +0200
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/welcome"}
+UserMailer#welcome: processed outbound mail in 12.3ms
+Completed 500 Internal Server Error in 55ms
+
+
+  
+NoMethodError (undefined method `email' for "jacques@example.com":String):
+  
+app/mailers/user_mailer.rb:13:in `welcome'
+Started GET "/rails/mailers/user_mailer/welcome" for 127.0.0.1 at 2017-08-02 11:20:13 +0200
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/welcome"}
+UserMailer#welcome: processed outbound mail in 13.2ms
+Completed 500 Internal Server Error in 55ms
+
+
+  
+NoMethodError (undefined method `email' for "jacques.leroux3@gmail.com":String):
+  
+app/mailers/user_mailer.rb:13:in `welcome'
+Started GET "/rails/mailers/user_mailer/welcome" for 127.0.0.1 at 2017-08-02 11:20:36 +0200
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/welcome"}
+UserMailer#welcome: processed outbound mail in 15.6ms
+Completed 500 Internal Server Error in 74ms
+
+
+  
+NoMethodError (undefined method `email' for "Jacques":String):
+  
+app/mailers/user_mailer.rb:13:in `welcome'
