@@ -2,23 +2,28 @@ require 'rails_helper'
 
 describe UsersController, type: :controller do
 
-  let(:user) { User.create!(email: 'testcontroller@rspec.com', password: 'R$p3c!') }
-  let(:user2) { User.create!(email: 'testcontroller2@rspec.com', password: 'R$sp3c!!') }
+  before do
+#  Define users when not using FactoryGirl
+#  let(:user) = { User.create!(email: 'testcontroller@rspec.com', password: 'R$p3c!') }
+#  @user2 = User.create!(email: 'testcontroller2@rspec.com', password: 'R$sp3c!!')
+    @user = FactoryGirl.create(:user)
+    @user2 = FactoryGirl.create(:user)
+  end
 
   describe 'GET #show' do
     context 'when a user is logged in' do
       before do 
-        sign_in user
+        sign_in @user
       end
 
       it 'loads the user details' do
-        get :show, params: { id: user.id }
+        get :show, params: { id: @user.id }
         expect(response.status).to eq 200
-        expect(assigns(:user)).to eq user
+        expect(assigns(:user)).to eq @user
       end
 
       it 'roots to the root page' do
-        get :show, params: { id: user2.id }
+        get :show, params: { id: @user2.id }
         expect(response.status).to eq 302
         expect(response).to redirect_to(root_path)
       end
@@ -26,7 +31,7 @@ describe UsersController, type: :controller do
 
     context 'when a user is not logged in' do
       it 'redirects to login page' do
-        get :show, params: { id: user.id }
+        get :show, params: { id: @user.id }
         expect(response).to redirect_to(root_path)
       end
     end
