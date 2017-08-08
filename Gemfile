@@ -20,6 +20,9 @@ gem 'uglifier', '>= 1.3.0'
 # Adding jQuery
 gem 'jquery-rails'
 
+# Stripe Payment
+  gem 'stripe'
+  
 # Provides the assign and assert-template functions
 gem 'rails-controller-testing'
 
