@@ -7673,3 +7673,703 @@ puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
 puma (3.9.1) lib/puma/server.rb:435:in `process_client'
 puma (3.9.1) lib/puma/server.rb:299:in `block in run'
 puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (5.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (3.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_product_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_product_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_orders_on_product_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_orders_on_product_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_orders_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_orders_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2017-08-08 13:08:18 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (9.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (94.2ms)
+Completed 200 OK in 3226ms (Views: 3150.4ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-08 14:01:02 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (8.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 153ms (Views: 130.8ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-08-08 14:04:58 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered collection of products/_product.html.erb [3 times] (1.9ms)
+  Rendered products/index.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 197ms (Views: 170.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-08-08 14:05:09 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.5ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (230.3ms)
+Completed 200 OK in 501ms (Views: 389.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2017-08-08 14:05:29 +0200
+Processing by UserRegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (12.7ms) [cache miss]
+  Rendered devise/registrations/new.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 232ms (Views: 230.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/" for 127.0.0.1 at 2017-08-08 14:09:20 +0200
+Processing by UserRegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N1HZ+i7gqtP0p3ksJ6N48mRbj2GEgJI/Yn10MKhXvYAhgxL5m0V5mwGQO5sFEHIB+bjXhkIZe1z0Ux5HOYYgxA==", "user"=>{"email"=>"wasbeertjie@yahoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (18.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "wasbeertjie@yahoo.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (7.9ms) [cache miss]
+  Rendered devise/registrations/new.html.erb within layouts/application (28.6ms)
+Completed 200 OK in 1051ms (Views: 176.6ms | ActiveRecord: 18.2ms)
+
+
+Started POST "/" for 127.0.0.1 at 2017-08-08 14:10:58 +0200
+Processing by UserRegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QKhSB0DVPPwfzLrMh0sQ10LlANS5bxgopY1RwwoVlq6hTLyNyeb+k+wGF560S1fFAhIYc6rgpw0CKBuecPZPFQ==", "user"=>{"email"=>"ca.vd.westhuizen@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ca.vd.westhuizen@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (35.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?)[0m  [["created_at", "2017-08-08 12:10:58.848474"], ["updated_at", "2017-08-08 12:10:58.848474"], ["email", "ca.vd.westhuizen@gmail.com"], ["encrypted_password", "$2a$11$YmeGrnvdRMEHSIy8kvGP3.s1kDEjSf8jKMF.nQkwcMHwATw1C2qPS"]]
+  [1m[35m (57.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.6ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2017-08-08 12:10:58.959920"], ["sign_in_count", 1], ["current_sign_in_at", "2017-08-08 12:10:58.953487"], ["last_sign_in_at", "2017-08-08 12:10:58.953487"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["id", 3]]
+  [1m[35m (34.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+  Rendering user_mailer/welcome.html.erb within layouts/mailer
+  Rendered user_mailer/welcome.html.erb within layouts/mailer (0.5ms)
+UserMailer#welcome: processed outbound mail in 784.0ms
+Sent mail to ca.vd.westhuizen@gmail.com (60.8ms)
+Date: Tue, 08 Aug 2017 14:11:00 +0200
+From: jacques.leroux3@gmail.com
+To: ca.vd.westhuizen@gmail.com
+Message-ID: <5989aa54da385_9d55eeb2c2948e7@rails.mail>
+Subject: Welcome to The Having Cows Parade!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <table>
+	<tbody>
+		<tr>
+			<td><h2>A very war welcome!</h2></td>
+		</tr>
+		<tr>
+			<td><p>Thank you for signing up with The Having Cows Parade!</p></td>
+		</tr>
+		<tr>
+			<td><p><strong>Mooooch love - Your fellow paraders!</strong></p></td>
+		</tr>
+	</tbody>
+</table>
+  </body>
+</html>
+
+Completed 302 Found in 2641ms (ActiveRecord: 131.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-08 14:11:00 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (15.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 148ms (Views: 145.5ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-08-08 14:17:59 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5otTFUpFspTkAoa5mN1kJLD6jeV1LWGGd+w9/t8xGFYHb72fw3Zw+xfIK+ur3SM28A2VQmai3qPQSXejpdLB7Q=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 103ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-08 14:17:59 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 149ms (Views: 147.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-08-08 14:18:12 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (9.6ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 169ms (Views: 167.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-08-08 14:18:28 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DIduRRMHJ0OB35aeNiEO2meec7SShSSRjiNRwlxz3F/Xo81Dv01uC65YVbTsuAd3EFILvhrJ0I0THT2cJU19zg==", "user"=>{"email"=>"jacques.leroux3@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jacques.leroux3@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (18.9ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-08-08 12:18:28.928969"], ["last_sign_in_at", "2017-08-02 09:40:12.615787"], ["sign_in_count", 14], ["updated_at", "2017-08-08 12:18:28.932370"], ["id", 1]]
+  [1m[35m (88.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 827ms (ActiveRecord: 108.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-08 14:18:29 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (16.4ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 166ms (Views: 161.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-08-08 14:18:41 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 251ms (Views: 182.1ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/users/2" for 127.0.0.1 at 2017-08-08 14:18:52 +0200
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"h3Dnu6iuobanKbWnkUpaPPaSi4Cgl/H4YczwdQQQswsxQcQZyudroiI032A8/XhoCFB/yo/dYFBSTq9ROlSf6g==", "id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (11.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  [1m[35m (21.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 108ms (ActiveRecord: 33.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-08-08 14:18:52 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 255ms (Views: 192.9ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/users/3" for 127.0.0.1 at 2017-08-08 14:19:00 +0200
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"m7FRCUG1iTdF2qMeNE69V+cMvQXUk0I8r6Mz2vtdvuYtgHKrI/xDI8DHydmZ+Z8DGc5JT/vZ05ScIWz+xRmSBw==", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (2.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  [1m[35m (58.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 113ms (ActiveRecord: 63.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-08-08 14:19:01 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (11.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 211ms (Views: 157.0ms | ActiveRecord: 11.8ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-08-08 15:40:22 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DjSDJgShx3o8hHnIffi1V7fL4ryOjMEZJP200K4GKx64BaCEZugNbrmZEw/QT5cDSQkW9qHGULEXf+v0kEIH/w=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 179ms (ActiveRecord: 45.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-08 15:40:23 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (51.8ms)
+Completed 200 OK in 291ms (Views: 269.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-08-08 15:40:30 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 186ms (Views: 170.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2017-08-08 15:40:41 +0200
+Processing by UserRegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms) [cache miss]
+  Rendered devise/registrations/new.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 206ms (Views: 204.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/" for 127.0.0.1 at 2017-08-08 15:41:13 +0200
+Processing by UserRegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GHe6b/jGeTjnh5Tap/x2jiDDYBklwohtWvMTgE3hoGvQfxqXPkOYCICNogHOHZXGELJ9mOxFzBpLwiahy54VJQ==", "user"=>{"email"=>"wasbeertjie@yahoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "wasbeertjie@yahoo.com"], ["LIMIT", 1]]
+  [1m[35mSQL (27.4ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?)[0m  [["created_at", "2017-08-08 13:41:14.002385"], ["updated_at", "2017-08-08 13:41:14.002385"], ["email", "wasbeertjie@yahoo.com"], ["encrypted_password", "$2a$11$ApAGZIca4cSaQAnbkj3BG.uxQnXzWTfx3u2qeMJnDXjAtVpjI367O"]]
+  [1m[35m (79.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (3.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (21.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2017-08-08 13:41:14.126078"], ["sign_in_count", 1], ["current_sign_in_at", "2017-08-08 13:41:14.120954"], ["last_sign_in_at", "2017-08-08 13:41:14.120954"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["id", 4]]
+  [1m[35m (34.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+  Rendering user_mailer/welcome.html.erb within layouts/mailer
+  Rendered user_mailer/welcome.html.erb within layouts/mailer (0.6ms)
+UserMailer#welcome: processed outbound mail in 41.2ms
+Sent mail to wasbeertjie@yahoo.com (19.6ms)
+Date: Tue, 08 Aug 2017 15:41:14 +0200
+From: jacques.leroux3@gmail.com
+To: wasbeertjie@yahoo.com
+Message-ID: <5989bf7a4405f_9d55eeb272949ef@rails.mail>
+Subject: Welcome to The Having Cows Parade!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <table>
+	<tbody>
+		<tr>
+			<td><h2>A very war welcome!</h2></td>
+		</tr>
+		<tr>
+			<td><p>Thank you for signing up with The Having Cows Parade!</p></td>
+		</tr>
+		<tr>
+			<td><p><strong>Mooooch love - Your fellow paraders!</strong></p></td>
+		</tr>
+	</tbody>
+</table>
+  </body>
+</html>
+
+Completed 302 Found in 854ms (ActiveRecord: 167.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-08 15:41:14 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (26.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 256ms (Views: 253.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-09 13:16:35 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (17.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (81.0ms)
+Completed 200 OK in 3449ms (Views: 3352.6ms | ActiveRecord: 19.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-09 13:18:32 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 241ms (Views: 237.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-08-09 13:18:53 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered collection of products/_product.html.erb [3 times] (4.4ms)
+  Rendered products/index.html.erb within layouts/application (49.0ms)
+Completed 200 OK in 537ms (Views: 519.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-09 13:19:03 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (13.9ms)
+Completed 500 Internal Server Error in 286ms (ActiveRecord: 2.1ms)
+
+
+  
+SyntaxError (/home/jacques/HC/app/views/products/show.html.erb:22: syntax error, unexpected ',', expecting ')'
+orm.hidden_field (:product_id, @product.id) );@output_buffer
+                              ^
+/home/jacques/HC/app/views/products/show.html.erb:22: syntax error, unexpected ')', expecting keyword_end
+d (:product_id, @product.id) );@output_buffer.safe_append='
+                              ^
+/home/jacques/HC/app/views/products/show.html.erb:37: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/products/show.html.erb:22: syntax error, unexpected ',', expecting ')'
+app/views/products/show.html.erb:22: syntax error, unexpected ')', expecting keyword_end
+app/views/products/show.html.erb:37: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/products" for 127.0.0.1 at 2017-08-09 13:29:35 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered collection of products/_product.html.erb [3 times] (1.5ms)
+  Rendered products/index.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 242ms (Views: 239.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-09 13:29:45 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (6.2ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.5ms)
+
+
+  
+SyntaxError (/home/jacques/HC/app/views/products/show.html.erb:22: syntax error, unexpected ',', expecting ')'
+hidden_field_tag (:product_id, @product.id) );@output_buffer
+                              ^
+/home/jacques/HC/app/views/products/show.html.erb:22: syntax error, unexpected ')', expecting keyword_end
+g (:product_id, @product.id) );@output_buffer.safe_append='
+                              ^
+/home/jacques/HC/app/views/products/show.html.erb:37: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/products/show.html.erb:22: syntax error, unexpected ',', expecting ')'
+app/views/products/show.html.erb:22: syntax error, unexpected ')', expecting keyword_end
+app/views/products/show.html.erb:37: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/products" for 127.0.0.1 at 2017-08-09 13:32:12 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered collection of products/_product.html.erb [3 times] (1.7ms)
+  Rendered products/index.html.erb within layouts/application (28.2ms)
+Completed 200 OK in 271ms (Views: 268.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-08-09 13:32:20 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (8.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered collection of products/_product.html.erb [3 times] (1.6ms)
+  Rendered products/index.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 279ms (Views: 265.7ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-09 13:33:17 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.5ms)
+
+
+  
+SyntaxError (/home/jacques/HC/app/views/products/show.html.erb:22: syntax error, unexpected ',', expecting ')'
+hidden_field_tag (:product_id, @product.id) );@output_buffer
+                              ^
+/home/jacques/HC/app/views/products/show.html.erb:22: syntax error, unexpected ')', expecting keyword_end
+g (:product_id, @product.id) );@output_buffer.safe_append='
+                              ^
+/home/jacques/HC/app/views/products/show.html.erb:37: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/products/show.html.erb:22: syntax error, unexpected ',', expecting ')'
+app/views/products/show.html.erb:22: syntax error, unexpected ')', expecting keyword_end
+app/views/products/show.html.erb:37: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/products/1" for 127.0.0.1 at 2017-08-09 13:40:42 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/home/jacques/HC/app/views/products/show.html.erb:22: syntax error, unexpected ',', expecting ')'
+hidden_field_tag (:product_id, @product.id) );@output_buffer
+                              ^
+/home/jacques/HC/app/views/products/show.html.erb:22: syntax error, unexpected ')', expecting keyword_end
+g (:product_id, @product.id) );@output_buffer.safe_append='
+                              ^
+/home/jacques/HC/app/views/products/show.html.erb:37: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/products/show.html.erb:22: syntax error, unexpected ',', expecting ')'
+app/views/products/show.html.erb:22: syntax error, unexpected ')', expecting keyword_end
+app/views/products/show.html.erb:37: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/products/1" for 127.0.0.1 at 2017-08-09 13:41:56 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (17.8ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered shared/_stripe_checkout_button.html.erb (1.8ms) [cache miss]
+  Rendered products/_new_comment.html.erb (1.1ms) [cache miss]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mUser Load (10.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_comments.html.erb (404.7ms) [cache miss]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (492.7ms)
+Completed 200 OK in 904ms (Views: 860.6ms | ActiveRecord: 35.0ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-09 13:43:20 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered shared/_stripe_checkout_button.html.erb (0.6ms) [cache miss]
+  Rendered products/show.html.erb within layouts/application (25.5ms)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for 1:Integer):
+    19:       <!-- form for Stripe -->
+    20:       <%= form_with(url: '/payments/create') do |form| %>
+    21:         <%= render partial: "shared/stripe_checkout_button" %>
+    22:           <%= form.hidden_field(:product_id, @product.id) %>
+    23:       <% end %>
+    24:     </div>
+    25:   </div> <!-- end row -->
+  
+app/views/products/show.html.erb:22:in `block in _app_views_products_show_html_erb__473351151__641178538'
+app/views/products/show.html.erb:20:in `_app_views_products_show_html_erb__473351151__641178538'
+Started GET "/products/1" for 127.0.0.1 at 2017-08-09 13:43:52 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered shared/_stripe_checkout_button.html.erb (0.7ms) [cache miss]
+  Rendered products/show.html.erb within layouts/application (39.3ms)
+Completed 500 Internal Server Error in 81ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for 1:Integer):
+    19:       <!-- form for Stripe -->
+    20:       <%= form_with(url: '/payments/create') do |form| %>
+    21:         <%= render partial: "shared/stripe_checkout_button" %>
+    22:           <%= form.hidden_field :product_id, @product.id %>
+    23:       <% end %>
+    24:     </div>
+    25:   </div> <!-- end row -->
+  
+app/views/products/show.html.erb:22:in `block in _app_views_products_show_html_erb__473351151__644708958'
+app/views/products/show.html.erb:20:in `_app_views_products_show_html_erb__473351151__644708958'
+Started GET "/products/1" for 127.0.0.1 at 2017-08-09 13:45:01 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered shared/_stripe_checkout_button.html.erb (0.8ms) [cache miss]
+  Rendered products/_new_comment.html.erb (0.9ms) [cache miss]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_comments.html.erb (59.7ms) [cache miss]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (114.7ms)
+Completed 200 OK in 354ms (Views: 346.5ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/payments/create" for 127.0.0.1 at 2017-08-09 13:46:07 +0200
+Processing by PaymentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cNXni/2Ru7wLAwe6mZudVjgvaDyvXynSKOZ7DjUYJmh96zq+2hr/M+jaRsf12FmO5oCWMWpYx71bb7RBWD1ovg==", "product_id"=>"1", "stripeToken"=>"tok_1AosdmCTMQuLHpALsPueaL6A", "stripeTokenType"=>"card", "stripeEmail"=>"jacques.leroux3@gmail.com"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2364ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/payments_controller.rb:16:in `create'
+Started GET "/login" for 127.0.0.1 at 2017-08-09 14:07:27 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (10.0ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (168.7ms)
+Completed 200 OK in 559ms (Views: 538.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-08-09 14:07:49 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G5SXb+TPxc3q9xV78mmwLAZeHPhgZ1Q25uq/DT8I0DaD+NmzBHyz823crZNte40gxyaUwsmglH6dftp58NTlwA==", "user"=>{"email"=>"jacques.leroux3@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (13.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jacques.leroux3@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (15.3ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-08-09 12:07:50.004221"], ["last_sign_in_at", "2017-08-08 12:18:28.928969"], ["sign_in_count", 15], ["updated_at", "2017-08-09 12:07:50.014746"], ["id", 1]]
+  [1m[35m (272.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1205ms (ActiveRecord: 300.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-09 14:07:50 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (12.8ms)
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 438ms (Views: 431.6ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-08-09 14:07:59 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered collection of products/_product.html.erb [3 times] (1.6ms)
+  Rendered products/index.html.erb within layouts/application (25.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 438ms (Views: 435.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-09 14:08:08 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered shared/_stripe_checkout_button.html.erb (1.8ms) [cache miss]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (96.9ms) [cache miss]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_comments.html.erb (58.8ms) [cache miss]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (197.1ms)
+Completed 200 OK in 464ms (Views: 429.4ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/payments/create" for 127.0.0.1 at 2017-08-09 14:09:13 +0200
+Processing by PaymentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mdZ4Htllk5ICdVv9y0F8d9QeoQgU3XPLSYRkh73RiXCY0lrvjw5dnqyk4KQ/J7pF7VdlOvCC7QBhTNYbHLKa+Q==", "product_id"=>"1", "stripeToken"=>"tok_1Aot08CTMQuLHpALI6UYT3t2", "stripeTokenType"=>"card", "stripeEmail"=>"jacques.leroux3@gmail.com"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (22.7ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "product_id", "total") VALUES (?, ?, ?)[0m  [["user_id", 1], ["product_id", 1], ["total", 260.0]]
+  [1m[35m (95.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 2057ms (ActiveRecord: 121.7ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-09 14:09:16 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered shared/_stripe_checkout_button.html.erb (2.5ms) [cache miss]
+  [1m[36mUser Load (13.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (21.8ms) [cache miss]
+  [1m[36mComment Load (9.5ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_comments.html.erb (72.3ms) [cache miss]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (160.8ms)
+Completed 200 OK in 436ms (Views: 378.6ms | ActiveRecord: 24.6ms)
+
+
