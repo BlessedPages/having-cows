@@ -1,6 +1,5 @@
-$(document).on('turbolinks:load', function() {
-  
   // Raty - Star Rating System
+  var refreshRating = function() {
   $('.rating').raty({
     starHalf: '<%= asset_path 'star-half.png' %>',
     starOff: '<%= asset_path 'star-off.png' %>',
@@ -17,7 +16,12 @@ $(document).on('turbolinks:load', function() {
       return $(this).attr('data-score');
     }
   }); // End Raty
+};
 
+$(document).on('turbolinks:load', function() {
+
+  refreshRating();
+  
   // Zoom pictures when hovered over
   $('.img-zoom').elevateZoom();
 
