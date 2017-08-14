@@ -3,6 +3,7 @@
 <div class="container-fluid product-single-whole">
   <div class="row">
    <div class="col-xs-12 col-sm-3 product-img">
+   <% cache @product do %>
     <% if @product.image_url %>
       <%= image_tag(@product.image_url, class: "img-responsive img-rounded img-zoom", data_img_zoom: @product.image_url) %>
     <% end %>
@@ -16,6 +17,7 @@
       <hr>
       <p><%= @product.description %></p>
       <p>Average Rating: <div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></div> </p>
+      <% end %>
       <!-- form for Stripe -->
       <%= form_tag('/payments/create') do %>
         <%= render partial: "shared/stripe_checkout_button" %>

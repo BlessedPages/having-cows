@@ -22,6 +22,9 @@ gem 'jquery-rails'
 
 # Stripe Payment
 gem 'stripe'
+
+# Gem for caching with Memcache
+gem 'dalli'
   
 # Provides the assign and assert-template functions
 gem 'rails-controller-testing'
