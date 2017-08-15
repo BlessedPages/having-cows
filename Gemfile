@@ -38,6 +38,9 @@ gem 'brakeman', :require => false
 # Paginate gem
 gem 'will_paginate', '~> 3.1.0'
 
+# Redis Gem
+gem 'redis-rails'
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
