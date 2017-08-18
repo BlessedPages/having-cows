@@ -13,8 +13,9 @@ FactoryGirl.define do
   factory :admin, class: User do
     email
     password 'R$p3c!!'
-    firstname 'masterninja'
-    lastname 'BabyPanda'
+    first_name 'masterninja'
+    last_name 'BabyPanda'
     admin true
   end
+    
 end
