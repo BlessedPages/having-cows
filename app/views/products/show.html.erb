@@ -18,10 +18,12 @@
     <p><%= @product.description %></p>
     <p>Average Rating: <div id="average-rating" class="rated" data-score="<%= @product.average_rating %>"></div> </p>
     <% end %> <!-- end caching -->
+    <% if current_user %>
     <!-- form for Stripe -->
-    <%= form_tag('/payments/create') do %>
-    <%= render partial: "shared/stripe_checkout_button" %>
-    <%= hidden_field_tag(:product_id, @product.id) %>
+      <%= form_tag('/payments/create') do %>
+        <%= render partial: "shared/stripe_checkout_button" %>
+        <%= hidden_field_tag(:product_id, @product.id) %>
+      <% end %>
     <% end %>
   </div>
 </div> <!-- end row -->

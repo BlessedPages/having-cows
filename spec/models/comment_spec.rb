@@ -6,7 +6,7 @@ describe Comment, type: :model do
 		before do
 			@comment = FactoryGirl.build(:comment)
 		end
-		it "should be a valid comment" do
+		it "should post the comment" do
 			expect(@comment).to be_valid
 		end
 	end
