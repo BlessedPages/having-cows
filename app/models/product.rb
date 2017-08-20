@@ -6,7 +6,7 @@ class Product < ApplicationRecord
 	validates :price, presence: true
 
 	def self.search(search_term)
-		Product.where("LOWER(name) LIKE ?", "%#{search_term.downcase}%")
+		Product.where("name ilike ?", "%#{search_term}%")
 	end
 
 	def highest_rating_comment
