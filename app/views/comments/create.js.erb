@@ -1,7 +1,5 @@
 $('#new_comment').html("Thank you for your review!"); // SHOW THANK YOU MESSAGE FOR NEW COMMENT
 
-$('.product-reviews').prepend("<%= j render @comment %>"); // SHOWS NEW COMMENT FIRST
-
 $('#average-rating').attr('data-score', "<%= @product.average_rating %>"); //UPDATE THE AVERAGE RATING
 
 refreshRating();

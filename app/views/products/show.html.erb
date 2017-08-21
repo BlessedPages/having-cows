@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container-fluid product-single-whole">
-  <div class="row">
+  <div class="row" data-product-id="<%= @product.id %>">
    <div class="col-xs-12 col-sm-3 product-img">
      <% cache @product do %>
      <% if @product.image_url %>
