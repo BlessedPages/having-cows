@@ -20,6 +20,9 @@ gem 'uglifier', '>= 1.3.0'
 # Adding jQuery
 gem 'jquery-rails'
 
+# Provides the assign and assert-template functions
+gem 'rails-controller-testing'
+
 # Keep environment variables private
 gem 'figaro'
 
@@ -47,6 +50,8 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'sqlite3'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'factory_girl_rails', '~> 4.0'
 end
 
 group :production do
