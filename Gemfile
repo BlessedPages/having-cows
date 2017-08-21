@@ -21,13 +21,16 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 
 # Stripe Payment
-  gem 'stripe'
+gem 'stripe'
   
 # Provides the assign and assert-template functions
 gem 'rails-controller-testing'
 
 # Keep environment variables private
 gem 'figaro'
+
+# Check for security vulnerabilities
+gem 'brakeman', :require => false
 
 # Paginate gem
 gem 'will_paginate', '~> 3.1.0'
