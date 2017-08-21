@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 describe UsersController, type: :controller do
-
-  before do
 #  Define users when not using FactoryGirl
 #  let(:user) = { User.create!(email: 'testcontroller@rspec.com', password: 'R$p3c!') }
 #  @user2 = User.create!(email: 'testcontroller2@rspec.com', password: 'R$sp3c!!')
+
+  before do
     @user = FactoryGirl.create(:user)
     @user2 = FactoryGirl.create(:user)
   end

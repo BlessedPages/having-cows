@@ -11,10 +11,10 @@
     <% end %> <!-- end cache -->
   </div> <!-- end col -->
   <% if current_user && current_user.admin? %>
-  <h6>
-    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure'} %> |
-    <%= link_to 'Edit', edit_product_path(product) %>
-  </h6>    
+    <h6>
+     <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure'} %> |
+     <%= link_to 'Edit', edit_product_path(product) %>
+    </h6>    
   <% end %>
   <hr>
 </div>
