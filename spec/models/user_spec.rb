@@ -6,7 +6,7 @@ describe User, type: :model do
 		expect(@user).not_to be_valid
 	end
 
-	it "the password is not 6 characters long" do
+	it "should not validate a password shorter than 6 characters" do
 		@user = FactoryGirl.build(:user, password: "12345")
 		expect(@user).not_to be_valid
 	end

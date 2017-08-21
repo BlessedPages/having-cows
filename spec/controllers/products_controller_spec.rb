@@ -82,13 +82,12 @@ describe ProductsController, type: :controller do
       before do
         sign_in @admin
       end
-      it "should save the product in the database" do
-        before = Product.all.length
-        post :create, params: { product: FactoryGirl.attributes_for(:product) }
+      it "should save the new product in the database" do
+        expect{
+          post :create, params: { product: FactoryGirl.attributes_for(:product) }
+          }.to change { Product.count }.by(1)
 
-        after = Product.all.length
         expect(response).to have_http_status(302)
-        expect(after).to eq (before + 1)
       end
     end
 
