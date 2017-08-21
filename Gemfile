@@ -22,6 +22,9 @@ gem 'jquery-rails'
 
 # Stripe Payment
 gem 'stripe'
+
+# Gem for caching with Memcache
+gem 'dalli'
   
 # Provides the assign and assert-template functions
 gem 'rails-controller-testing'
@@ -34,6 +37,9 @@ gem 'brakeman', :require => false
 
 # Paginate gem
 gem 'will_paginate', '~> 3.1.0'
+
+# Redis Gem
+gem 'redis-rails'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

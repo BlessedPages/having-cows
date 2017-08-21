@@ -10795,3 +10795,500 @@ Processing by CommentsController#create as JS
 Completed 200 OK in 269ms (Views: 69.2ms | ActiveRecord: 159.1ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-08-14 11:51:22 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (17.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (80.1ms)
+Completed 200 OK in 2847ms (Views: 2774.1ms | ActiveRecord: 19.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-14 11:51:26 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (12.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 244ms (Views: 228.4ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/static_pages/about" for 127.0.0.1 at 2017-08-14 11:52:32 +0200
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (2002.5ms)
+Completed 200 OK in 2215ms (Views: 2213.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/about" for 127.0.0.1 at 2017-08-14 11:54:50 +0200
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (2020.5ms)
+Completed 200 OK in 2225ms (Views: 2220.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/about" for 127.0.0.1 at 2017-08-14 11:58:53 +0200
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (2007.0ms)
+Completed 200 OK in 2309ms (Views: 2307.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/about" for 127.0.0.1 at 2017-08-14 12:00:36 +0200
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (2004.3ms)
+Completed 200 OK in 2323ms (Views: 2320.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-14 12:01:11 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (10.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (67.4ms)
+Completed 200 OK in 1203ms (Views: 1122.5ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/static_pages/about" for 127.0.0.1 at 2017-08-14 12:01:20 +0200
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (2011.4ms)
+Completed 200 OK in 2220ms (Views: 2218.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/about" for 127.0.0.1 at 2017-08-14 12:04:37 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (2016.3ms)
+Completed 200 OK in 3214ms (Views: 3178.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/about" for 127.0.0.1 at 2017-08-14 12:05:21 +0200
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 219ms (Views: 216.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/about" for 127.0.0.1 at 2017-08-14 12:10:57 +0200
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (2010.1ms)
+Completed 200 OK in 2243ms (Views: 2240.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/about" for 127.0.0.1 at 2017-08-14 12:11:32 +0200
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (2160.6ms)
+Completed 500 Internal Server Error in 2201ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `cache_key' for #<#<Class:0xb5dcb3b4>:0xb8fc6bc>
+Did you mean?  cache_if
+               cache_hit):
+    1: 	<% cache cache_key do %>
+    2: 	<% sleep 2 %>
+    3: 	<% end %>
+    4: 	<h1 class="section-header">About the band</h1>
+  
+app/views/static_pages/about.html.erb:1:in `_app_views_static_pages_about_html_erb___255000624_96986560'
+Started GET "/static_pages/about" for 127.0.0.1 at 2017-08-14 12:12:04 +0200
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 234ms (Views: 232.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/about" for 127.0.0.1 at 2017-08-14 12:19:11 +0200
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 261ms (Views: 259.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/about" for 127.0.0.1 at 2017-08-14 12:19:25 +0200
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 293ms (Views: 290.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/about" for 127.0.0.1 at 2017-08-14 12:19:56 +0200
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 242ms (Views: 239.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for 127.0.0.1 at 2017-08-14 12:20:01 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (2016.6ms)
+Completed 200 OK in 2352ms (Views: 2349.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for 127.0.0.1 at 2017-08-14 12:21:28 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (2018.2ms)
+Completed 200 OK in 2327ms (Views: 2318.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for 127.0.0.1 at 2017-08-14 12:25:44 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 273ms (Views: 271.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for 127.0.0.1 at 2017-08-14 12:26:20 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 227ms (Views: 224.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for 127.0.0.1 at 2017-08-14 12:32:33 +0200
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 1181ms (Views: 1151.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for 127.0.0.1 at 2017-08-14 12:33:40 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+Started GET "/" for 127.0.0.1 at 2017-08-14 12:34:42 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendered static_pages/contact.html.erb within layouts/application (246482.3ms)
+Completed 401 Unauthorized in 184592ms (ActiveRecord: 0.0ms)
+
+
+Completed 401 Unauthorized in 246510ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-14 12:38:05 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (85.4ms)
+Completed 200 OK in 1264ms (Views: 1214.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/static_pages/contact" for 127.0.0.1 at 2017-08-14 12:39:02 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+Started GET "/static_pages/contact" for 127.0.0.1 at 2017-08-14 12:40:02 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+Started GET "/static_pages/contact" for 127.0.0.1 at 2017-08-14 12:40:25 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (2010.8ms)
+Completed 200 OK in 2325ms (Views: 2317.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for 127.0.0.1 at 2017-08-14 12:41:04 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 276ms (Views: 264.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for 127.0.0.1 at 2017-08-14 12:41:14 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 267ms (Views: 256.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for 127.0.0.1 at 2017-08-14 12:42:32 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 341ms (Views: 339.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/contact" for 127.0.0.1 at 2017-08-14 12:44:03 +0200
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (2005.0ms)
+Completed 200 OK in 2281ms (Views: 2278.8ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/products" for 127.0.0.1 at 2017-08-14 12:49:28 +0200
+  Rendered static_pages/contact.html.erb within layouts/application (833940.1ms)
+  Rendered static_pages/contact.html.erb within layouts/application (894172.3ms)
+Completed 401 Unauthorized in 833978ms (ActiveRecord: 0.0ms)
+
+
+Completed 401 Unauthorized in 894209ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-14 12:54:38 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (2.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (157.9ms)
+Completed 200 OK in 2559ms (Views: 2451.8ms | ActiveRecord: 29.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-08-14 12:54:57 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+THIS IS A LIST OF ALL PRODUCTS: Hoodie
+THIS IS A LIST OF ALL PRODUCTS: T shirt
+THIS IS A LIST OF ALL PRODUCTS: Toddler Onesie
+  Rendered collection of products/_product.html.erb [3 times] (20.2ms)
+  Rendered products/index.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 331ms (Views: 328.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-14 12:55:12 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (13.4ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered shared/_stripe_checkout_button.html.erb (5.7ms) [cache miss]
+  Rendered products/_new_comment.html.erb (4.4ms) [cache miss]
+  [1m[36mComment Load (8.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mUser Load (12.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (313.9ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (12.9ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (10.3ms) [cache miss]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (10.4ms) [cache miss]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (10.7ms) [cache miss]
+  Rendered products/_comments.html.erb (497.3ms) [cache miss]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (613.0ms)
+Completed 200 OK in 1142ms (Views: 910.9ms | ActiveRecord: 40.5ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-14 12:56:15 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered shared/_stripe_checkout_button.html.erb (9.5ms) [cache hit]
+  Rendered products/_new_comment.html.erb (17.4ms) [cache hit]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (15.5ms) [cache hit]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (18.1ms) [cache hit]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (2.9ms) [cache hit]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (15.1ms) [cache hit]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (14.7ms) [cache hit]
+  Rendered products/_comments.html.erb (111.1ms) [cache hit]
+  [1m[35m (8.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (182.6ms)
+Completed 200 OK in 597ms (Views: 577.6ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-08-14 12:56:57 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.5ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (150.3ms)
+Completed 200 OK in 481ms (Views: 449.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-08-14 12:57:11 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9+PRBcRnpQu3+LXW2tT748Bzvp6ftcw0slKLoX4UsgQ4lcrfqoKLHJbYgS8I6/jUq8fZRSCoPWcCdezk/D/nqA==", "user"=>{"email"=>"jacques.leroux3@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (13.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jacques.leroux3@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (16.8ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-08-14 10:57:12.207751"], ["last_sign_in_at", "2017-08-12 14:30:18.166944"], ["sign_in_count", 19], ["updated_at", "2017-08-14 10:57:12.220546"], ["id", 1]]
+  [1m[35m (110.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 942ms (ActiveRecord: 140.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-14 12:57:12 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (9.2ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 390ms (Views: 386.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-08-14 12:57:22 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+THIS IS A LIST OF ALL PRODUCTS: Hoodie
+THIS IS A LIST OF ALL PRODUCTS: T shirt
+THIS IS A LIST OF ALL PRODUCTS: Toddler Onesie
+  Rendered collection of products/_product.html.erb [3 times] (13.3ms)
+  Rendered products/index.html.erb within layouts/application (27.5ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 333ms (Views: 326.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-14 12:57:25 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered shared/_stripe_checkout_button.html.erb (10.8ms) [cache hit]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (70.2ms) [cache hit]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mUser Load (16.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (27.8ms) [cache hit]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (34.2ms) [cache hit]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (32.4ms) [cache hit]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (24.4ms) [cache hit]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (22.5ms) [cache hit]
+  Rendered products/_comments.html.erb (194.7ms) [cache hit]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (321.4ms)
+Completed 200 OK in 753ms (Views: 712.7ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-14 12:58:10 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered shared/_stripe_checkout_button.html.erb (0.9ms) [cache hit]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (23.0ms) [cache hit]
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (23.4ms) [cache hit]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (12.5ms) [cache hit]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (11.5ms) [cache hit]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (15.4ms) [cache hit]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (10.1ms) [cache hit]
+  Rendered products/_comments.html.erb (117.5ms) [cache hit]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (205.9ms)
+Completed 200 OK in 504ms (Views: 480.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-08-14 13:07:40 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+THIS IS A LIST OF ALL PRODUCTS: Hoodie
+THIS IS A LIST OF ALL PRODUCTS: T shirt
+THIS IS A LIST OF ALL PRODUCTS: Toddler Onesie
+  Rendered collection of products/_product.html.erb [3 times] (24.8ms)
+  Rendered products/index.html.erb within layouts/application (36.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 264ms (Views: 261.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-08-14 13:08:02 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered collection of products/_product.html.erb [3 times] (11.5ms)
+  Rendered products/index.html.erb within layouts/application (32.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 385ms (Views: 372.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-08-14 13:08:52 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered collection of products/_product.html.erb [3 times] (7.1ms)
+  Rendered products/index.html.erb within layouts/application (26.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 310ms (Views: 298.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-08-14 13:17:37 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX("products"."updated_at") AS timestamp FROM "products"[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered collection of products/_product.html.erb [3 times] (12.0ms)
+  Rendered products/index.html.erb within layouts/application (36.7ms)
+  [1m[36mUser Load (16.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 367ms (Views: 346.1ms | ActiveRecord: 17.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-08-14 13:28:33 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered collection of products/_product.html.erb [3 times] (9.7ms)
+  Rendered products/index.html.erb within layouts/application (172.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 545ms (Views: 520.6ms | ActiveRecord: 44.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-08-14 13:28:48 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (25.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 320ms (Views: 316.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/products?utf8=%E2%9C%93&q=hoodie&commit=Go" for 127.0.0.1 at 2017-08-14 13:55:06 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"hoodie", "commit"=>"Go"}
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name LIKE '%hoodie%')[0m
+  Rendered collection of products/_product.html.erb [1 times] (11.4ms)
+  Rendered products/index.html.erb within layouts/application (106.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1876ms (Views: 1808.3ms | ActiveRecord: 13.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-14 13:55:16 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (19.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 278ms (Views: 275.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products?utf8=%E2%9C%93&q=hoodie&commit=Go" for 127.0.0.1 at 2017-08-14 13:55:25 +0200
+Processing by ProductsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"hoodie", "commit"=>"Go"}
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (16.4ms)
+  [1m[36mUser Load (7.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 285ms (Views: 275.1ms | ActiveRecord: 8.2ms)
+
+
