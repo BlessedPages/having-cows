@@ -9144,3 +9144,919 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 300ms (Views: 298.6ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-08-10 21:30:29 +0200
+  [1m[35m (6.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (64.2ms)
+Completed 200 OK in 2286ms (Views: 2230.4ms | ActiveRecord: 14.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-08-10 21:30:41 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+THIS IS A LIST OF ALL PRODUCTS: Hoodie
+THIS IS A LIST OF ALL PRODUCTS: T shirt
+THIS IS A LIST OF ALL PRODUCTS: Toddler Onesie
+  Rendered collection of products/_product.html.erb [3 times] (22.0ms)
+  Rendered products/index.html.erb within layouts/application (40.2ms)
+Completed 200 OK in 308ms (Views: 301.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-10 21:30:49 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 211ms (ActiveRecord: 6.8ms)
+
+
+  
+SyntaxError (/home/jacques/HC/app/views/products/show.html.erb:7: syntax error, unexpected '>'
+tput_buffer.safe_append='") %>
+                              ^
+/home/jacques/HC/app/views/products/show.html.erb:11: unknown regexp option - h
+/home/jacques/HC/app/views/products/show.html.erb:11: syntax error, unexpected tINTEGER, expecting ')'
+utput_buffer.safe_append='</h1>
+                              ^
+/home/jacques/HC/app/views/products/show.html.erb:13: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+      <h3>R'.freeze;@output_buffer.append=
+            ^
+/home/jacques/HC/app/views/products/show.html.erb:15: unknown regexp option - h
+/home/jacques/HC/app/views/products/show.html.erb:15: syntax error, unexpected tINTEGER, expecting ')'
+utput_buffer.safe_append='</h3>
+                              ^
+/home/jacques/HC/app/views/products/show.html.erb:18: unknown regexp options - dv
+/home/jacques/HC/app/views/products/show.html.erb:18: syntax error, unexpected '<'
+buffer.safe_append='"></div> </p>
+                              ^
+/home/jacques/HC/app/views/products/show.html.erb:20: unknown regexp options - payt
+/home/jacques/HC/app/views/products/show.html.erb:20: end pattern with unmatched parenthesis: /p>
+      <!-- form for Stripe -->
+      '.freeze;@output_buffer.append=  form_tag('/m
+/home/jacques/HC/app/views/products/show.html.erb:20: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+=  form_tag('/payments/create') do @output_buffer.safe_appen
+                              ^
+/home/jacques/HC/app/views/products/show.html.erb:25: unknown regexp options - dv
+/home/jacques/HC/app/views/products/show.html.erb:25: syntax error, unexpected '<'
+  </div> <!-- end row -->
+          ^
+/home/jacques/HC/app/views/products/show.html.erb:25: syntax error, unexpected keyword_end
+  </div> <!-- end row -->
+                 ^
+/home/jacques/HC/app/views/products/show.html.erb:25: syntax error, unexpected '\n', expecting keyword_do_LAMBDA or tLAMBEG
+/home/jacques/HC/app/views/products/show.html.erb:26: unterminated regexp meets end of file):
+  
+app/views/products/show.html.erb:7: syntax error, unexpected '>'
+app/views/products/show.html.erb:11: unknown regexp option - h
+app/views/products/show.html.erb:11: syntax error, unexpected tINTEGER, expecting ')'
+app/views/products/show.html.erb:13: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/products/show.html.erb:15: unknown regexp option - h
+app/views/products/show.html.erb:15: syntax error, unexpected tINTEGER, expecting ')'
+app/views/products/show.html.erb:18: unknown regexp options - dv
+app/views/products/show.html.erb:18: syntax error, unexpected '<'
+app/views/products/show.html.erb:20: unknown regexp options - payt
+app/views/products/show.html.erb:20: end pattern with unmatched parenthesis: /p>
+app/views/products/show.html.erb:20: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/products/show.html.erb:25: unknown regexp options - dv
+app/views/products/show.html.erb:25: syntax error, unexpected '<'
+app/views/products/show.html.erb:25: syntax error, unexpected keyword_end
+app/views/products/show.html.erb:25: syntax error, unexpected '\n', expecting keyword_do_LAMBDA or tLAMBEG
+app/views/products/show.html.erb:26: unterminated regexp meets end of file
+Started GET "/products/1" for 127.0.0.1 at 2017-08-10 21:31:59 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered shared/_stripe_checkout_button.html.erb (0.1ms) [cache miss]
+  Rendered products/_new_comment.html.erb (1.9ms) [cache miss]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (6.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_comments.html.erb (439.3ms) [cache miss]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (482.4ms)
+Completed 200 OK in 720ms (Views: 673.2ms | ActiveRecord: 17.1ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-10 21:33:29 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.6ms)
+
+
+  
+SyntaxError (/home/jacques/HC/app/views/products/show.html.erb:7: syntax error, unexpected '<'
+ed img-zoom", data_img_zoom: <%= @product.image_url );@outpu
+                              ^
+/home/jacques/HC/app/views/products/show.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;     end 
+                 ^
+/home/jacques/HC/app/views/products/show.html.erb:37: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/home/jacques/HC/app/views/products/show.html.erb:39: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/products/show.html.erb:7: syntax error, unexpected '<'
+app/views/products/show.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+app/views/products/show.html.erb:37: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/products/show.html.erb:39: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/products/1" for 127.0.0.1 at 2017-08-10 21:34:26 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered shared/_stripe_checkout_button.html.erb (0.4ms) [cache miss]
+  Rendered products/_new_comment.html.erb (1.3ms) [cache miss]
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_comments.html.erb (68.2ms) [cache miss]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (102.1ms)
+Completed 200 OK in 367ms (Views: 349.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-10 21:52:54 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 657ms (Views: 654.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-10 21:54:31 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 215ms (Views: 212.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-10 21:57:31 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (16.3ms)
+Completed 500 Internal Server Error in 331ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "...v{ width:99.9%%": expected expression (e.g. 1px, bold), was "; }"):
+     5: 
+     6:   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+     7:   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Bowlby+One" />
+     8:   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9: 
+    10:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+app/assets/stylesheets/fancyInput.scss:41
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__692468969_103557570'
+Started GET "/" for 127.0.0.1 at 2017-08-10 21:59:46 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (9.6ms)
+Completed 500 Internal Server Error in 319ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "...v{ width:99.9%%": expected expression (e.g. 1px, bold), was "; }"):
+     5: 
+     6:   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+     7:   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Bowlby+One" />
+     8:   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9: 
+    10:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+app/assets/stylesheets/fancyInput.scss:41
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__692468969_86666610'
+Started GET "/" for 127.0.0.1 at 2017-08-10 22:01:30 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 741ms (Views: 740.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-10 22:07:11 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 726ms (Views: 721.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-10 22:11:06 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (18.5ms)
+Completed 500 Internal Server Error in 340ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "...v{ width:99.9%%": expected expression (e.g. 1px, bold), was "; }"):
+     5: 
+     6:   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+     7:   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Bowlby+One" />
+     8:   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9: 
+    10:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+app/assets/stylesheets/fancyInput.scss:41
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__692468969_87518030'
+Started GET "/" for 127.0.0.1 at 2017-08-10 22:18:29 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (12.3ms)
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'main' with type 'text/css'
+Checked in these paths: 
+  /home/jacques/HC/app/assets/config
+  /home/jacques/HC/app/assets/images
+  /home/jacques/HC/app/assets/javascripts
+  /home/jacques/HC/app/assets/stylesheets
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/actioncable-5.1.1/lib/assets/compiled
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/actionview-5.1.1/lib/assets/compiled
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/jacques/HC/node_modules):
+     5: 
+     6:   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+     7:   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Bowlby+One" />
+     8:   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9: 
+    10:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+app/assets/stylesheets/application.css:15
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__692468969__622294008'
+Started GET "/" for 127.0.0.1 at 2017-08-10 22:19:39 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'fancyinput' with type 'text/css'
+Checked in these paths: 
+  /home/jacques/HC/app/assets/config
+  /home/jacques/HC/app/assets/images
+  /home/jacques/HC/app/assets/javascripts
+  /home/jacques/HC/app/assets/stylesheets
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/actioncable-5.1.1/lib/assets/compiled
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/actionview-5.1.1/lib/assets/compiled
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/jacques/HC/node_modules):
+     5: 
+     6:   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+     7:   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Bowlby+One" />
+     8:   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9: 
+    10:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+app/assets/stylesheets/application.css:15
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__692468969__621084528'
+Started GET "/" for 127.0.0.1 at 2017-08-10 22:36:08 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (12.9ms)
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery.raty' with type 'text/css'
+Checked in these paths: 
+  /home/jacques/HC/app/assets/config
+  /home/jacques/HC/app/assets/images
+  /home/jacques/HC/app/assets/javascripts
+  /home/jacques/HC/app/assets/stylesheets
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/actioncable-5.1.1/lib/assets/compiled
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/actionview-5.1.1/lib/assets/compiled
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/jacques/HC/node_modules):
+     5: 
+     6:   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+     7:   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Bowlby+One" />
+     8:   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9: 
+    10:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+app/assets/stylesheets/application.css:15
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__692468969__621103968'
+Started GET "/" for 127.0.0.1 at 2017-08-10 22:38:06 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (15.7ms)
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'vendor/assets/jquery.raty' with type 'text/css'
+Checked in these paths: 
+  /home/jacques/HC/app/assets/config
+  /home/jacques/HC/app/assets/images
+  /home/jacques/HC/app/assets/javascripts
+  /home/jacques/HC/app/assets/stylesheets
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/actioncable-5.1.1/lib/assets/compiled
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/actionview-5.1.1/lib/assets/compiled
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/jacques/HC/node_modules):
+     5: 
+     6:   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+     7:   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Bowlby+One" />
+     8:   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9: 
+    10:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+app/assets/stylesheets/application.css:15
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__692468969__621032048'
+Started GET "/" for 127.0.0.1 at 2017-08-10 22:41:48 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (5.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (9.3ms)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 5.4ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery.raty.css' with type 'text/css'
+Checked in these paths: 
+  /home/jacques/HC/app/assets/config
+  /home/jacques/HC/app/assets/images
+  /home/jacques/HC/app/assets/javascripts
+  /home/jacques/HC/app/assets/stylesheets
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/actioncable-5.1.1/lib/assets/compiled
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/actionview-5.1.1/lib/assets/compiled
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/jacques/HC/node_modules):
+     5: 
+     6:   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+     7:   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Bowlby+One" />
+     8:   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9: 
+    10:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+app/assets/stylesheets/application.css:15
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__692468969_105121470'
+Started GET "/" for 127.0.0.1 at 2017-08-10 22:54:19 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery.raty' with type 'text/css'
+Checked in these paths: 
+  /home/jacques/HC/app/assets/config
+  /home/jacques/HC/app/assets/images
+  /home/jacques/HC/app/assets/javascripts
+  /home/jacques/HC/app/assets/stylesheets
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/actioncable-5.1.1/lib/assets/compiled
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/actionview-5.1.1/lib/assets/compiled
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/jacques/HC/node_modules):
+     5: 
+     6:   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+     7:   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Bowlby+One" />
+     8:   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9: 
+    10:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+app/assets/stylesheets/application.css:15
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__692468969_105126410'
+Started GET "/" for 127.0.0.1 at 2017-08-10 22:55:05 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (13.0ms)
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'fancyInput' with type 'text/css'
+Checked in these paths: 
+  /home/jacques/HC/app/assets/config
+  /home/jacques/HC/app/assets/images
+  /home/jacques/HC/app/assets/javascripts
+  /home/jacques/HC/app/assets/stylesheets
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/actioncable-5.1.1/lib/assets/compiled
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/actionview-5.1.1/lib/assets/compiled
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/jacques/HC/node_modules):
+     5: 
+     6:   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+     7:   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Bowlby+One" />
+     8:   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9: 
+    10:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+app/assets/stylesheets/application.css:15
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__692468969__622172888'
+Started GET "/" for 127.0.0.1 at 2017-08-10 22:55:31 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 180ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery.raty' with type 'application/javascript'
+Checked in these paths: 
+  /home/jacques/HC/app/assets/config
+  /home/jacques/HC/app/assets/images
+  /home/jacques/HC/app/assets/javascripts
+  /home/jacques/HC/app/assets/stylesheets
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/actioncable-5.1.1/lib/assets/compiled
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/actionview-5.1.1/lib/assets/compiled
+  /home/jacques/.rvm/gems/ruby-2.4.1/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/jacques/HC/node_modules):
+     7:   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Bowlby+One" />
+     8:   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9: 
+    10:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    12: 
+    13:   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+app/assets/javascripts/application.js:16
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__692468969_105126050'
+Started GET "/" for 127.0.0.1 at 2017-08-10 22:56:04 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 612ms (Views: 595.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-08-10 22:56:19 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+THIS IS A LIST OF ALL PRODUCTS: Hoodie
+THIS IS A LIST OF ALL PRODUCTS: T shirt
+THIS IS A LIST OF ALL PRODUCTS: Toddler Onesie
+  Rendered collection of products/_product.html.erb [3 times] (6.1ms)
+  Rendered products/index.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 234ms (Views: 231.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-10 22:56:28 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (10.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered shared/_stripe_checkout_button.html.erb (0.2ms) [cache miss]
+  Rendered products/_new_comment.html.erb (11.2ms) [cache miss]
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_comments.html.erb (70.3ms) [cache miss]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (115.7ms)
+Completed 200 OK in 342ms (Views: 325.7ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-10 23:26:54 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (15.5ms)
+Completed 500 Internal Server Error in 276ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "...v{ width:99.9%%": expected expression (e.g. 1px, bold), was "; }"):
+     5: 
+     6:   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+     7:   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Bowlby+One" />
+     8:   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9: 
+    10:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+app/assets/stylesheets/fancyInput.scss:41
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__692468969__631301908'
+Started GET "/" for 127.0.0.1 at 2017-08-10 23:30:51 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 1422ms (Views: 1418.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-10 23:33:27 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 633ms (Views: 630.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-11 18:45:27 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (5.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (79.5ms)
+Completed 200 OK in 3765ms (Views: 3682.7ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-08-11 18:45:40 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+THIS IS A LIST OF ALL PRODUCTS: Hoodie
+THIS IS A LIST OF ALL PRODUCTS: T shirt
+THIS IS A LIST OF ALL PRODUCTS: Toddler Onesie
+  Rendered collection of products/_product.html.erb [3 times] (7.0ms)
+  Rendered products/index.html.erb within layouts/application (42.2ms)
+Completed 200 OK in 322ms (Views: 301.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-11 18:45:48 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (15.0ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered shared/_stripe_checkout_button.html.erb (0.8ms) [cache miss]
+  Rendered products/_new_comment.html.erb (1.3ms) [cache miss]
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mUser Load (9.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_comments.html.erb (485.9ms) [cache miss]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (597.0ms)
+Completed 200 OK in 1041ms (Views: 795.3ms | ActiveRecord: 38.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-12 12:49:42 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (16.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (135.7ms)
+Completed 200 OK in 4514ms (Views: 4412.3ms | ActiveRecord: 24.7ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-08-12 12:49:57 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+THIS IS A LIST OF ALL PRODUCTS: Hoodie
+THIS IS A LIST OF ALL PRODUCTS: T shirt
+THIS IS A LIST OF ALL PRODUCTS: Toddler Onesie
+  Rendered collection of products/_product.html.erb [3 times] (22.9ms)
+  Rendered products/index.html.erb within layouts/application (65.9ms)
+Completed 200 OK in 378ms (Views: 360.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-08-12 12:50:03 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.7ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (491.0ms)
+Completed 200 OK in 1111ms (Views: 820.8ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-08-12 12:50:20 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"16GSbFysoCkKNU9Y4SKEw8gsbOhh343dyR+CPaVXoBqbJECYrNgc9IWcVasPDK7RptJIQyZr05uuwp6YoRPivg==", "user"=>{"email"=>"jacques.leroux3@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (23.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jacques.leroux3@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (13.8ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-08-12 10:50:20.993576"], ["last_sign_in_at", "2017-08-10 17:22:30.249225"], ["sign_in_count", 17], ["updated_at", "2017-08-12 10:50:21.014205"], ["id", 1]]
+  [1m[35m (82.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1089ms (ActiveRecord: 119.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-12 12:50:21 +0200
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (20.1ms)
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 432ms (Views: 426.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2017-08-12 12:51:12 +0200
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+THIS IS A LIST OF ALL PRODUCTS: Hoodie
+THIS IS A LIST OF ALL PRODUCTS: T shirt
+THIS IS A LIST OF ALL PRODUCTS: Toddler Onesie
+  Rendered collection of products/_product.html.erb [3 times] (30.9ms)
+  Rendered products/index.html.erb within layouts/application (68.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 390ms (Views: 384.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-12 12:51:17 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (4.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (5.9ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered shared/_stripe_checkout_button.html.erb (3.5ms) [cache miss]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (169.6ms) [cache miss]
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_comments.html.erb (140.2ms) [cache miss]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (390.8ms)
+Completed 200 OK in 1042ms (Views: 768.2ms | ActiveRecord: 21.2ms)
+
+
+Started DELETE "/products/1/comments/2" for 127.0.0.1 at 2017-08-12 12:52:03 +0200
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/aobo+qlHUwPZt7H2e1/lOP1RZPaZu6cxrp+RqJy6/dzuxY5Zpsk9ok88MxpAYjpEpdojD6lEOvo4rdlxmhPCw==", "product_id"=>"1", "id"=>"2"}
+  [1m[36mComment Load (1.6ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (19.0ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = ?[0m  [["id", 2]]
+  [1m[35m (78.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 176ms (ActiveRecord: 98.6ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-12 12:52:03 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered shared/_stripe_checkout_button.html.erb (1.1ms) [cache miss]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (19.4ms) [cache miss]
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_comments.html.erb (73.6ms) [cache miss]
+  Rendered products/show.html.erb within layouts/application (157.9ms)
+Completed 200 OK in 533ms (Views: 476.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-12 12:55:42 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered shared/_stripe_checkout_button.html.erb (5.8ms) [cache miss]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (17.0ms) [cache miss]
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mUser Load (11.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (7.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_comments.html.erb (72.4ms) [cache miss]
+  Rendered products/show.html.erb within layouts/application (143.8ms)
+Completed 200 OK in 1153ms (Views: 1086.1ms | ActiveRecord: 20.0ms)
+
+
+Started POST "/products/1/comments" for 127.0.0.1 at 2017-08-12 12:56:34 +0200
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xr9v+RnjbyIDWyIfrZ0DccPlQIFoZ4m80a5ExsQbRsNIrmJjld1WmIUBDBQdcfQMModtnoykd8v/9o3loAHiPw==", "comment"=>{"body"=>"Fan-Tastic", "rating"=>"5"}, "commit"=>"Submit", "product_id"=>"1"}
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (7.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (20.6ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "body", "rating", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["body", "Fan-Tastic"], ["rating", 5], ["product_id", 1], ["created_at", "2017-08-12 10:56:34.978785"], ["updated_at", "2017-08-12 10:56:34.978785"]]
+  [1m[35m (116.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 195ms (ActiveRecord: 144.7ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2017-08-12 12:56:35 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  [1m[35m (11.3ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered shared/_stripe_checkout_button.html.erb (0.9ms) [cache miss]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_new_comment.html.erb (16.8ms) [cache miss]
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (8.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered products/_comments.html.erb (77.4ms) [cache miss]
+  [1m[35m (8.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  Rendered products/show.html.erb within layouts/application (169.6ms)
+Completed 200 OK in 465ms (Views: 417.5ms | ActiveRecord: 28.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-12 13:26:49 +0200
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 3]]
+  Rendered static_pages/landing_page.html.erb within layouts/application (137.1ms)
+Completed 200 OK in 3751ms (Views: 3670.3ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-08-12 13:47:06 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (183.3ms)
+Completed 200 OK in 1940ms (Views: 1787.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-08-12 13:47:10 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (19.9ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (69.9ms)
+Completed 200 OK in 522ms (Views: 499.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2017-08-12 13:47:20 +0200
+Processing by UserRegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.9ms) [cache miss]
+  Rendered devise/registrations/new.html.erb within layouts/application (53.6ms)
+Completed 200 OK in 480ms (Views: 479.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2017-08-12 13:48:59 +0200
+Processing by UserRegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms) [cache miss]
+  Rendered devise/registrations/new.html.erb within layouts/application (69.8ms)
+Completed 500 Internal Server Error in 771ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "...v{ width:99.9%%": expected expression (e.g. 1px, bold), was "; }"):
+     5: 
+     6:   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+     7:   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Bowlby+One" />
+     8:   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9: 
+    10:   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11:   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+app/assets/stylesheets/fancyInput.scss:41
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__825566893_104223070'
+Started GET "/sign_up" for 127.0.0.1 at 2017-08-12 13:49:54 +0200
+Processing by UserRegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms) [cache miss]
+  Rendered devise/registrations/new.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 1090ms (Views: 1088.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2017-08-12 13:50:45 +0200
+Processing by UserRegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.0ms) [cache miss]
+  Rendered devise/registrations/new.html.erb within layouts/application (29.1ms)
+Completed 200 OK in 786ms (Views: 766.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2017-08-12 13:51:24 +0200
+Processing by UserRegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (9.9ms) [cache miss]
+  Rendered devise/registrations/new.html.erb within layouts/application (27.2ms)
+Completed 200 OK in 836ms (Views: 834.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2017-08-12 13:52:04 +0200
+Processing by UserRegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (23.1ms) [cache miss]
+  Rendered devise/registrations/new.html.erb within layouts/application (32.7ms)
+Completed 200 OK in 858ms (Views: 856.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2017-08-12 13:54:11 +0200
+Processing by UserRegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (38.8ms) [cache miss]
+  Rendered devise/registrations/new.html.erb within layouts/application (55.3ms)
+Completed 200 OK in 831ms (Views: 824.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2017-08-12 13:54:45 +0200
+Processing by UserRegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.5ms) [cache miss]
+  Rendered devise/registrations/new.html.erb within layouts/application (31.9ms)
+Completed 200 OK in 1098ms (Views: 1093.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2017-08-12 13:59:34 +0200
+Processing by UserRegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (15.9ms) [cache miss]
+  Rendered devise/registrations/new.html.erb within layouts/application (42.5ms)
+Completed 200 OK in 1221ms (Views: 1218.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/about" for 127.0.0.1 at 2017-08-12 14:14:15 +0200
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 832ms (Views: 828.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/about" for 127.0.0.1 at 2017-08-12 14:14:17 +0200
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 305ms (Views: 298.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/about" for 127.0.0.1 at 2017-08-12 14:17:51 +0200
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 328ms (Views: 325.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/about" for 127.0.0.1 at 2017-08-12 14:33:08 +0200
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 898ms (Views: 897.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/about" for 127.0.0.1 at 2017-08-12 14:38:40 +0200
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 322ms (Views: 320.1ms | ActiveRecord: 0.0ms)
+
+

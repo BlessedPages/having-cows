@@ -4,7 +4,7 @@
   <div class="row">
    <div class="col-xs-12 col-sm-3 product-img">
     <% if @product.image_url %>
-      <%= image_tag(@product.image_url, class: "img-responsive img-rounded") %>
+      <%= image_tag(@product.image_url, width: "350", class: "img-responsive img-rounded img-zoom", data_img_zoom: @product.image_url) %>
     <% end %>
     </div>
     <div class="col-xs-12 col-sm-9 product-description">
