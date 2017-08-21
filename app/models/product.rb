@@ -3,6 +3,7 @@ class Product < ApplicationRecord
 	has_many :comments
 
 	validates :name, presence: true
+	validates :price, presence: true
 
 	def self.search(search_term)
 		if Rails.env.production?
