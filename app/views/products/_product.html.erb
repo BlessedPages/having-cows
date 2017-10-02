@@ -10,7 +10,7 @@
     <p><strong>Colour:</strong> <%= product.colour %></p>
     <% end %> <!-- end cache -->
   </div> <!-- end col -->
-  <% if current_user && current_user.admin? %>
+  <% if user_signed_in? && current_user.admin? %>
     <h6>
      <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure'} %> |
      <%= link_to 'Edit', edit_product_path(product) %>
