@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container-fluid product-single-whole">
+<div class="container-fluid anchor">
   <div class="row" data-product-id="<%= @product.id %>">
-   <div class="col-xs-12 col-sm-3 product-img">
+   <div class="col-xs-12 col-sm-3">
      <% cache @product do %>
        <% if @product.image_url %>
         <%= image_tag(@product.image_url, class: "img-responsive img-rounded img-zoom", data_img_zoom: @product.image_url) %>
        <% end %>
    </div>
-   <div class="col-xs-12 col-sm-9 product-description">
+   <div class="col-xs-12 col-sm-9">
     <h1><%= @product.name %></h1>
     <hr>
     <h3>R<%= @product.price %></h3>
@@ -24,6 +24,8 @@
         <%= render partial: "shared/stripe_checkout_button" %>
         <%= hidden_field_tag(:product_id, @product.id) %>
       <% end %>
+      <% else %>
+      <h4>Please sign in to make purchases.</h4>
     <% end %>
   </div>
 </div> <!-- end row -->

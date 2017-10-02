@@ -1,10 +1,10 @@
 <div class="row">
   <div class="col-sm-6 col-md-3">
     <% cache product do %>
-      <%= image_tag(product.image_url, class: "img-responsive img-thumbnail") %>
+    <%= link_to image_tag(product.image_url, class: "product-image img-responsive img-thumbnail"), product %>
   </div>
   <div class="col-sm-6 col-md-9">
-    <h4 class="funky-txt"><a href="#"><%= link_to product.name, product %></a></h4>
+    <h4 class="funky-txt"><%= link_to product.name, product %></h4>
     <h4 class="funky-txt"><strong>R <%= product.price %></strong></h4>
     <p><%= product.description %></p>
     <p><strong>Colour:</strong> <%= product.colour %></p>

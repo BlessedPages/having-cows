@@ -2,10 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.product-single-whole {
-	max-height: 300px; 
+
+.product-image {
+  max-height: 325px;
+  min-height: 325px;
+  display: block;
+  margin: auto;
 }
 
-.product-img img {
-	max-height: 300px;
+.product-review {
+  margin: 0 15px;
 }

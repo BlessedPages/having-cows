@@ -14,10 +14,6 @@
  *= require_self
  */
 
-body {
-  display: block;
-}
-
 /**** NAVBAR ****/
 
 .nav-align {
@@ -25,6 +21,13 @@ body {
   line-height: 20px;
 }
 
+.navbar-brand a:hover{
+  text-decoration: none;
+}
+
+.navigate {
+  color: #4D63C4;
+}
 
 /**** FOOTER ***/
 
@@ -52,13 +55,14 @@ footer a:hover {
 
 /**** TYPOGRAPHY ****/
 
+.anchor {
+  margin-top: 50px;
+}
+
 .funky-txt {
   font-family: "Bowlby One";
 }
 
-.clear-nav {
-  margin-top: 55px;
-}
 .unstyled {
   list-style-type: none;
 }
@@ -72,8 +76,15 @@ footer a:hover {
   margin-top: -10px;
 }
 
+.alert {
+  margin-top: 70px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 #yield-container {
   padding-left: 0;
   padding-right: 0;
-  margin-top: 56px; 
 }
